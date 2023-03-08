@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        html {
+            min-height: 100%;
+            position: relative;
+        }
+
+        body {
+            height: 100%;
+        }
+
+        .background {
+            height: 100%;
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .nav,
+        .nav-link,
+        .nav-link:hover {
+            border: 0 !important;
+        }
+
+        .nav-link {
+            color: #000 !important;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #6c757d !important;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas class="background"></canvas>
+
+    <!-- Start of Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="container collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="animals-overview.html">Animals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="submit-animal.html">Submit an Animal</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- End of Navbar-->
+
+    <div class="container my-5 bg-light">
+        <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+            <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+                <h1 class="display-4 fw-bold lh-1">Wanna see something cool?</h1>
+                <p class="lead text-secondary">We have a database of tons of animals to help you learn about the
+                    world around you!</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+                    <a href="animals-overview.html" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">See our animals</a>
+                    <a href="" class="btn btn-outline-primary btn-lg px-4 fw-bold">Submit an animal</a>
+                </div>
+            </div>
+            <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+                <img class="rounded-lg-3"
+                    src="https://images.unsplash.com/photo-1591824438708-ce405f36ba3d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
+                    alt="" width="720">
+            </div>
+        </div>
+    </div>
+    <!-- End of Hero -->
+
+</body>
+
+<!--Bootstrap-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
+<script>
+    window.onload = function () {
+        if (document.querySelector('.background') !== null) {
+            Particles.init({
+                selector: '.background',
+                maxParticles: 210,
+                connectParticles: true
+            });
+        }
+    }; 
+</script>
+
+</html>

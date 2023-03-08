@@ -1,0 +1,536 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Level 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+	<style>
+		* {
+			box-sizing: border-box
+		}
+
+		.filters {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 1rem;
+			margin: 1rem 0;
+		}
+
+		span.filter {
+			cursor: pointer;
+			text-decoration: underline dotted;
+		}
+
+		#favemedia>.content {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			gap: 1rem;
+		}
+
+		#coding {
+			display: inline;
+		}
+
+		.media {
+			padding: 1em;
+			background-color: #f5f5f5;
+			border-radius: 0.5em;
+
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.media img {
+			width: 50%;
+			height: auto;
+			object-fit: cover;
+		}
+
+		.media:hover {
+			background-color: #e5e5e5;
+		}
+
+		.card-title {
+			margin-top: 1em;
+			font-weight: bold;
+		}
+
+		.card-title,
+		.card-text {
+			margin-bottom: 0 !important;
+		}
+
+		.hide {
+			display: none;
+		}
+
+		.show {
+			animation: show .3s ease 0s 1 normal forwards;
+			transform-origin: center;
+		}
+
+		@keyframes show {
+			0% {
+				display: flex;
+				transform: scale(0);
+				width: 0;
+				height: 0;
+				margin: 0;
+			}
+
+			100% {
+				transform: scale(1);
+			}
+		}
+
+		.mySlides {
+			display: none
+		}
+
+		.mySlides img {
+			vertical-align: middle;
+		}
+
+		.slideshow-container {
+			max-width: 1000px;
+			position: relative;
+			margin: auto;
+			margin-bottom: 1em;
+		}
+
+		.prev,
+		.next {
+			cursor: pointer;
+			position: absolute;
+			top: 50%;
+			width: auto;
+			padding: 16px;
+			margin-top: -22px;
+			color: rgb(126, 126, 126);
+			border-bottom: 0 !important;
+			font-weight: bold;
+			font-size: 18px;
+			transition: 0.6s ease;
+			border-radius: 0 3px 3px 0;
+			user-select: none;
+		}
+
+		.prev {
+			left: 0;
+			border-radius: 0 3px 3px 0;
+		}
+
+		.next {
+			right: 0;
+			border-radius: 3px 0 0 3px;
+		}
+
+		.prev:hover,
+		.next:hover {
+			background-color: rgba(0, 0, 0, 0.8);
+		}
+
+		.text {
+			position: relative;
+			width: 100%;
+			text-align: center;
+		}
+
+		.numbertext {
+			color: #f2f2f2;
+			background-color: #717171b3;
+			font-size: 12px;
+			padding: 8px 12px;
+			position: absolute;
+			top: 0;
+		}
+
+		.dot {
+			cursor: pointer;
+			height: 15px;
+			width: 15px;
+			margin: 0 2px;
+			background-color: #bbb;
+			border-radius: 50%;
+			display: inline-block;
+			transition: background-color 0.6s ease;
+		}
+
+		.active,
+		.dot:hover {
+			background-color: #717171;
+		}
+
+		.fade {
+			animation-name: fade;
+			animation-duration: 1.5s;
+		}
+
+		@keyframes fade {
+			from {
+				opacity: .4
+			}
+
+			to {
+				opacity: 1
+			}
+		}
+
+		@media only screen and (min-width: 600px) {
+			.media {
+				width: 100%;
+			}
+
+			.prev,
+			.next {
+				font-size: 11px;
+			}
+		}
+
+		@media only screen and (min-width: 768px) {
+
+			.prev,
+			.next {
+				font-size: 1em;
+			}
+
+			.media {
+				width: 45%;
+			}
+		}
+
+		@media only screen and (min-width: 1024px) {
+			.media {
+				width: 27%;
+			}
+		}
+	</style>
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt">
+			<span class="logo"><img src="images/logo.svg" alt="" /></span>
+			<h1>Hi, I'm Jeanne Ferrer!</h1>
+		</header>
+
+		<!-- Nav -->
+		<nav id="nav">
+			<ul>
+				<li><a href="#intro" class="active">Introduction</a></li>
+				<li><a href="#hobbies">Hobbies</a></li>
+				<li><a href="#favemedia">Favourite Media</a></li>
+				<li><a href="#cta">Projects</a></li>
+			</ul>
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- Introduction -->
+			<section id="intro" class="main">
+				<div class="spotlight">
+					<div class="content">
+						<header class="major">
+							<h2>But you can just call me <i>Adi.</i> &#128522;</h2>
+						</header>
+						<p>I'm a Computer Science student (on a gap year, though) with a passion for web development.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- First Section -->
+			<section id="hobbies" class="main special">
+				<header class="major">
+					<h2>Some Hobbies</h2>
+				</header>
+				<ul class="features">
+					<li>
+						<span class="icon solid major style1 fa-code"></span>
+						<div style="margin-bottom: 0.7em;">
+							<h3 id="coding"></h3>
+						</div>
+						<p>Gained a love for creating things on my laptop. Currently self-learning web development from
+							<a href="https://www.theodinproject.com">the Odin Project</a> in addition to <a
+								href="https://schulichignite.com/scorch/">Schulich Ignite's Scorch sessions</a>.
+						</p>
+					</li>
+					<li>
+						<span class="icon solid major style3 fa-user"></span>
+						<h3>Dancing</h3>
+						<p>Joined a primary dance club in Singapore and a non-pro dance troupe in the Philippines.
+							Founded a dance club during my senior year in high school. Went on hiatus for 2 years but
+							recently started self-learning again. </p>
+					</li>
+					<li>
+						<!-- <span class=" major style5 fa-gem"></span> -->
+						<i class="icon solid major style5 fa-camera"></i>
+						<h3>Photography</h3>
+						<p>I like taking landscape and everyday life photos with my Canon DSLR whenever I have the time. You can view my photos in <a href="https://www.instagram.com/takenbyadi/" target="_blank">this Instagram page</a>.
+						</p>
+					</li>
+				</ul>
+			</section>
+
+			<!-- Second Section -->
+			<section id="favemedia" class="main special">
+				<header class="major">
+					<h2>My Favourite Media</h2>
+					<nav class="filters">
+						<span class="filter" data-filter="all">All</span>
+						<span class="filter" data-filter="movie">Movies</span>
+						<span class="filter" data-filter="tv">TV Shows</span>
+						<span class="filter" data-filter="anime">Anime</span>
+						<span class="filter" data-filter="book">Books</span>
+					</nav>
+				</header>
+				<div class="content">
+					<div class="media" data-category="anime">
+						<img src="./images/blue-lock.jpeg" alt="Blue Lock poster">
+						<div class="card-body">
+							<h4 class="card-title">Blue Lock</h4>
+							<p class="card-text">Genre: Sports (Football/Soccer)</p>
+						</div>
+					</div>
+
+					<div class="media" data-category="tv">
+						<img src="./images/b99.jpeg" alt="Brooklyn Nine Nine poster">
+						<div class="card-body">
+							<h4 class="card-title">Brooklyn Nine-Nine</h4>
+							<p class="card-text">Genre: Comedy, Crime</p>
+						</div>
+					</div>
+
+					<div class="media" data-category="tv">
+						<img src="./images/crash-landing.jpeg" alt="Crash Landing On You poster">
+						<div class="card-body">
+							<h4 class="card-title">Crash Landing On You</h4>
+							<p class="card-text">Genre: Romance, K-Drama</p>
+						</div>
+					</div>
+
+					<div class="media" data-category="movie">
+						<img src="./images/chamber-of-secrets.jpeg"
+							alt="Harry Potter and the Chamber of Secrets poster">
+						<div class="card-body">
+							<h4 class="card-title">Harry Potter and the Chamber of Secrets</h4>
+							<p class="card-text">Genre: Fantasy</p>
+						</div>
+					</div>
+
+					<div class="media" data-category="movie">
+						<img src="./images/no-way-home.jpeg" alt="Spider-Man: No Way Home poster">
+						<div class="card-body">
+							<h4 class="card-title">Spider-Man: No Way Home</h4>
+							<p class="card-text">Genre: Sci-fi, Action</p>
+						</div>
+					</div>
+
+					<div class="media" data-category="book">
+						<img src="./images/scorch-trials.jpeg" alt="The Scorch Trials book cover">
+						<div class="card-body">
+							<h4 class="card-title">The Scorch Trials</h4>
+							<p class="card-text">Genre: Dystopian</p>
+						</div>
+					</div>
+
+					<div class="media" data-category="anime">
+						<img src="./images/vinland-saga.jpeg" alt="Vinland Sage poster">
+						<div class="card-body">
+							<h4 class="card-title">Vinland Sage</h4>
+							<p class="card-text">Genre: Gore, Historical, Action</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Get Started -->
+			<section id="cta" class="main special">
+				<header class="major">
+					<h2>Recent Projects</h2>
+					<p>These are what I've been working on.</p>
+				</header>
+				<div class="content">
+					<div class="slideshow-container">
+						<div class="mySlides fade">
+							<div class="numbertext">1 / 3</div>
+							<img src="./images/pelicans.png" style="width:100%">
+							<a class="text" href="./Ferrer_Jeanne_S1_L2.html" target="_blank">Pelicans in Calgary
+								Page</a>
+						</div>
+
+						<div class="mySlides fade">
+							<div class="numbertext">2 / 3</div>
+							<img src="./images/tic-tac-toe.png" style="width:100%">
+							<a class="text" href="https://adiferrer.github.io/odin-tic-tac-toe/"
+								target="_blank">Tic-Tac-Toe Page</a>
+						</div>
+
+						<div class="mySlides fade">
+							<div class="numbertext">3 / 3</div>
+							<img src="./images/king!.png" style="width:100%">
+							<a class="text" href="./Ferrer_Jeanne_S2_L1.html" target="_blank">King! Coming Soon Page</a>
+						</div>
+
+						<a class="prev" onclick="plusSlides(-1)">❮</a>
+						<a class="next" onclick="plusSlides(1)">❯</a>
+
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<section>
+				<h2>Credits</h2>
+				<div>
+					<h3>Template Used</h3>
+					<p>Stellar Template made by <a href="https://twitter.com/ajlkn" target="_blank">@ajlkn</a></p>
+					<ul class="actions">
+						<li><a href="https://html5up.net/stellar" class="button" target="_blank">Live Template</a></li>
+					</ul>
+				</div>
+				<div>
+					<h2>Library Used</h2>
+					<p>Typed.js made by <a href="https://github.com/mattboldt">Matt Boldt</a></p>
+					<ul class="actions">
+						<li><a href="https://mattboldt.github.io/typed.js/" class="button"
+								target="_blank">Documentation</a></li>
+					</ul>
+				</div>
+			</section>
+			<section>
+				<h3>Contact Info</h3>
+				<dl class="alt">
+					<dt>Email</dt>
+					<dd><a href="#">adiferrer@gmail.com</a></dd>
+				</dl>
+				<ul class="icons">
+					<li><a href="https://www.facebook.com/adi.ferrer.33/" class="icon brands fa-facebook-f alt"
+							target="_blank"><span class="label">Facebook</span></a></li>
+					<li><a href="https://www.instagram.com/jeanneologyy/?hl=en" class="icon brands fa-instagram alt"
+							target="_blank"><span class="label">Instagram</span></a></li>
+					<li><a href="https://github.com/adiferrer" class="icon brands fa-github alt" target="_blank"><span
+								class="label">GitHub</span></a></li>
+					<li><a href="https://www.linkedin.com/in/jeanne-ferrer-496a021aa/"
+							class="icon brands fa-linkedin alt" target="_blank"><span class="label">LinkedIn</span></a>
+					</li>
+				</ul>
+			</section>
+			<p class="copyright">&copy; Jeanne Ferrer. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+	<script>
+		const filters = document.querySelectorAll('.filter');
+
+		const keyword = "media"; // The keyword to use to select
+
+		filters.forEach(filter => {
+
+			// Add listener for when you click something
+			filter.addEventListener('click', function () {
+
+				// Find out which filter has been clicked
+				let selectedFilter = filter.getAttribute('data-filter');
+
+				// Get all items and the list of item to show
+				let items = Array.from(document.getElementsByClassName(keyword));
+				let itemsToShow = Array.from(document.querySelectorAll(`.${keyword}[data-category='${selectedFilter}']`));
+
+				// Determine items to hide as the set difference of the items and the items to show
+				let itemsToHide = items.filter(x => !itemsToShow.includes(x));
+
+				// Allow for all filter
+				if (selectedFilter == 'all') {
+					itemsToHide = [];
+					// Find elements that have ANY data-filter set
+					itemsToShow = document.querySelectorAll(`.${keyword}`);
+				}
+
+				// Hide items that should be hidden
+				itemsToHide.forEach(el => {
+					el.classList.add('hide'); // add hide class
+					el.classList.remove('show'); // remove show class
+				});
+
+				// Show items that should be shown
+				itemsToShow.forEach(el => {
+					el.classList.remove('hide'); // remove hide class
+					el.classList.add('show');  // add show class
+				});
+
+			});
+		});
+
+		var typed5 = new Typed('#coding', {
+			strings: ['Coding'],
+			typeSpeed: 500,
+			backSpeed: 1,
+			cursorChar: '_',
+			shuffle: true,
+			smartBackspace: false,
+			loop: true
+		});
+
+		let slideIndex = 1;
+		showSlides(slideIndex);
+
+		function plusSlides(n) {
+			showSlides(slideIndex += n);
+		}
+
+		function currentSlide(n) {
+			showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+			let i;
+			let slides = document.getElementsByClassName("mySlides");
+			let dots = document.getElementsByClassName("dot");
+			if (n > slides.length) { slideIndex = 1 }
+			if (n < 1) { slideIndex = slides.length }
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";
+			}
+			//for (i = 0; i < dots.length; i++) {
+			//	dots[i].className = dots[i].className.replace(" active", "");
+			//}
+			slides[slideIndex - 1].style.display = "block";
+			//dots[slideIndex - 1].className += " active";
+		}
+	</script>
+</body>
+
+</html>

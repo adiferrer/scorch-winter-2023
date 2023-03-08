@@ -33,7 +33,9 @@
     function logData(){
         // Save the data, then do something with it
         editor.save().then((outputData) => { // If it works
-                console.log('Page data: ', outputData); // Log data
+                outputData.blocks.forEach((block) => {
+                    console.log(`A ${block.type} with text '${block.data.text}'`);
+                })
             }).catch((error) => { // If there is an error getting data
                 console.log('Saving failed: ', error) // Log error
             });

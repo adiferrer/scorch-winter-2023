@@ -37,10 +37,10 @@
             for (let block of outputData.blocks) {
                 switch (block.type){
                     case 'heading':
-                        console.log("heading", block.data)
+                        console.log(`<h${block.data.level}>${block.data.text}</h${block.data.level}>`);
                         break
                     case 'paragraph':
-                        console.log("paragraph", block.data)
+                        console.log(`<p>${block.data.text}</p>`);
                         break
                 }
             }

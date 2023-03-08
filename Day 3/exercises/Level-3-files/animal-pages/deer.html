@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deer</title>
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../animal-page.css">
+</head>
+<body>
+    <canvas class="background"></canvas>
+
+    <!-- Start of Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="container collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../animals-overview.html">Animals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../submit-animal.html">Submit an Animal</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- End of Navbar-->
+
+    <div class="container my-5 d-flex" id="animals-container">
+        <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg bg-white">
+            <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+                <h1 class="display-4 fw-bold lh-1">Deer</h1>
+                <p class="lead text-muted">Species name</p>
+                <p>Least Concern</p>
+                <p>
+                    Deer are a group of hoofed mammals that are found throughout the world in a variety of habitats, including forests, grasslands, and deserts. There are many species of deer, including the white-tailed deer, mule deer, elk, caribou, and moose.
+                </p>
+                <p>
+                    Deer are herbivores, feeding on a variety of plant material, including leaves, twigs, and grasses. They are important prey animals for many predators, including wolves, coyotes, and mountain lions.
+                </p>
+                <p>
+                    Deer have long legs that allow them to run quickly and jump over obstacles. They also have antlers, which are used by male deer to establish dominance and attract mates. Female deer, called does, do not have antlers.
+                </p>
+                <p>
+                    Deer are known for their seasonal migrations, which can cover hundreds of miles as they move between summer and winter ranges. They also exhibit a variety of social behaviors, including grooming, vocalizations, and posturing.
+                </p>
+                <p>
+                    Deer populations are managed in many areas to maintain a healthy balance between the deer population and the ecosystem. This includes hunting and culling programs, as well as habitat conservation efforts. Deer are also popular animals for recreational hunting and wildlife watching, contributing to their economic value.
+                </p>
+            </div>
+            <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+                <img class="rounded-start" src="../images/deer.jpeg" alt="">
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js" integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
+<script>
+    window.onload = function () {
+        if (document.querySelector('.background') !== null) {
+            Particles.init({
+                selector: '.background',
+                maxParticles: 210,
+                connectParticles: true
+            });
+        }
+    };
+</script>
+
+</html>

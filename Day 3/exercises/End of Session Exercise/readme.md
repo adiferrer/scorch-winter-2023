@@ -4,12 +4,12 @@
 
 Modify the Coder! blog so that:
 
-- The posts now each take up 12 columns and include the current information, and additional information (can be made up) about:
+- [x] The posts now each take up 12 columns and include the current information, and additional information (can be made up) about:
   - The language the post is in
   - Some tags that are links
   - A summary of the first little bit of the post
   - An author name and image (can use [unsplash for picture(s)](https://unsplash.com))
-- Add [mermaid JS](https://mermaid.js.org/) to a blog post (use below HTML as example)
+- [x] Add [mermaid JS](https://mermaid.js.org/) to a blog post (use below HTML as example)
 
 ```html
 <pre class="mermaid">
