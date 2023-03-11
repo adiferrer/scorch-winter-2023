@@ -1,8 +1,48 @@
-{% extends "base.jinja"%}
+<!doctype html>
+<html lang="en" style="overflow-x:hidden">
 
-{%block title%} Checkout {%endblock%}
+<head>
+  <title> Checkout </title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-{%block main%}
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  
+  <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+    <!-- Level 3-->
+  <script src="cart.js"></script>
+</head>
+
+<body>
+    <header class="p-3 border-bottom">
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+                <img style="height:64px;width:64px;" src="images/logo.png" alt="" srcset="">
+            </a>
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+              <li><a href="products.html" class="nav-link px-2 link-dark">Products</a></li>
+            </ul>
+
+            <div class="dropdown text-end">
+              <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle align-items-center" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="images/profile-pic.jpg" alt="profile-pic" width="48" height="48" class="rounded-circle">
+              </a>
+              <ul class="dropdown-menu text-small">
+                <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                <li><a class="dropdown-item" href="checkout.html">View Cart</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+  <main>
+    
 <div class="container py-5">
     
     <div class="py-5 text-center">
@@ -18,9 +58,27 @@
             <span id="cart-items-indicator" class="badge bg-primary rounded-pill"></span>
         </h4>
         <ul id="cart-list" class="list-group mb-3">
-            <li class="list-group-item d-flex justify-content-between" id="total-div">
-                <span>Subtotal <strong>no tax</strong>(CAD)</span>
-                <strong id="cart-total"></strong> 
+
+
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+                <h6 class="my-0">Product name</h6>
+                <small class="text-muted">Description</small>
+            </div>
+            <span class="text-muted">$25</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between bg-light">
+            <div class="text-success">
+                <h6 class="my-0">Product sale</h6>
+                <small>%10 off</small>
+            </div>
+            <span class="text-success">-$5</span>
+            </li>
+
+            
+            <li class="list-group-item d-flex justify-content-between">
+            <span>Subtotal <strong>no tax</strong>tal (CAD)</span>
+            <strong>$20</strong>
             </li>
             
         </ul>
@@ -190,60 +248,27 @@
 
 
 <script>
-    // TODO: Add your Level 3 code here 
-    let cart = Object.entries(getCart());
+    <!--TODO: Add your Level 3 code here-->
+    cart = getCart()
 
-    const cartIndicator = document.getElementById("cart-items-indicator");
-    let total_items = 0;
-    const cart_list = document.getElementById("cart-list");
-    const cart_total = document.getElementById("cart-total");
-    const cart_total_item = document.getElementById("total-div");
-    let total = 0;
-    if (cart !== null) {
-        cart.forEach(item => {
-            const list_item = document.createElement("li");
-            list_item.classList.add("list-group-item", "d-flex", "justify-content-between", "lh-sm");
-            const item_div = document.createElement("div");
-            const item_name = document.createElement("h6");
-            item_name.classList.add("my-0");
-            item_name.innerHTML = item[0];
-            const item_desc= document.createElement("small");
-            item_desc.classList.add("text-muted");
-            item_desc.innerHTML = "$" + item[1].description;
-            item_div.appendChild(item_name);
-            item_div.appendChild(item_desc);
-            const item_price = document.createElement("span");
-            item_price.classList.add("text-muted");
-            item_price.innerHTML = "$" + item[1].price;
-            list_item.appendChild(item_div);
-            list_item.appendChild(item_price);
-            cart_list.insertBefore(list_item, cart_total_item);
-            if (item[1].sale) {
-                total += Number((item[1].quantity * (item[1].price - (item[1].price * 0.1))).toFixed(3))
-                const discountItem = document.createElement("li");
-                discountItem.classList.add("list-group-item", "d-flex", "justify-content-between", "bg-light");
-                const discountItem_div = document.createElement("div");
-                discountItem_div.classList.add("text-success");
-                const discountItem_name = document.createElement("h6");
-                discountItem_name.classList.add("my-0");
-                discountItem_name.innerHTML = item[0] + " sale";
-                const discountItem_desc = document.createElement("small");
-                discountItem_desc.innerHTML = "10% off";
-                discountItem_div.appendChild(discountItem_name);
-                discountItem_div.appendChild(discountItem_desc);
-                const discountItem_price = document.createElement("span");
-                discountItem_price.classList.add("text-success");
-                discountItem_price.innerHTML = "-$" + (item[1].price * 0.1).toFixed(3);
-                discountItem.appendChild(discountItem_div);
-                discountItem.appendChild(discountItem_price);
-                cart_list.insertBefore(discountItem, cart_total_item);
-            } else {
-                total += Number(item[1].quantity * item[1].price)
-            }
-            total_items += item[1].quantity
-        });
-        cartIndicator.innerHTML = total_items;
-        cart_total.innerHTML = '$' + total;
-    }
+    document.getElementById("cart-items-indicator")
+    cart_list = document.getElementById("cart-list")
+
 </script>
-{%endblock%}
+
+
+  </main>
+  <footer>
+    <!-- place footer here -->
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+{% extends 'base.jinja'%}
+{% block tabicon %}../images/logo.png{% endblock %}
+{% block title %}{{product["name"]}}{% endblock %}
+{% block style %}../styles.css{% endblock %}
+{% block cartjs %}../cart.js{% endblock %}
+{% block headerLogoLink %}../index.html{% endblock %}
+{% block headericon %}../images/logo.png{% endblock %}
+{% block productLink %}../products.html{% endblock %}
+{% block profilepic %}../images/profile-pic.jpg{% endblock %}
+{% block profileLink %}../profile.html{% endblock %}
+{% block checkoutLink %}../checkout.html{% endblock %}
+{% block main %}
+<div class="container col-xxl-8 px-4 py-5">
+    <div class="row d-flex align-items-center justify-content-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="{{product["image"]}}" class="d-block mx-lg-auto img-fluid product-image-single-page" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+      </div>
+      <div class="col-lg-6 text-right">
+        <h1 class="display-5 fw-bold lh-1 mb-3">{{product["name"]}}</h1>
+        <p class="mb-5">
+            {% if product["sale"] == true %}
+                <strike>${{product["price"]}}</strike>
+                <span>${{product["price"] - (product["price"] * 0.1)}}</span>
+            {% else %}
+                <span>${{product["price"]}}</span>
+            {% endif %}
+        </p>
+        <p class="lead text-muted">{{product["description"]}}</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <button type="button" class="btn btn-dark btn-lg px-4 me-md-2" id="addToCartBtn">Add to cart</button>
+          <a href="../checkout.html" class="btn btn-outline-dark btn-lg px-4">Checkout</a>
+        </div>
+      </div>
+    </div>
+</div>
+
+<script>
+  const addToCartBtn = document.getElementById("addToCartBtn");
+  let isSale = "{{product["sale"]}}".toLowerCase() === "true" ? true : false;
+  addToCartBtn.addEventListener("click", () => addToCart("{{product["name"]}}", {{product["price"]}}, isSale, "{{product["description"]}}", "{{product["image"]}}" ));
+</script>
+{% endblock %}

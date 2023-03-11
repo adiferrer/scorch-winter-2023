@@ -2,7 +2,7 @@
 <html lang="en" style="overflow-x:hidden">
 
 <head>
-  <title>{% block title %}Better Buy{% endblock %}</title>
+  <title>Better Buy</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,39 +11,48 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   
-  <link rel="shortcut icon" href="{% block tabicon %}images/logo.png{% endblock %}" type="image/x-icon">
-  <link rel="stylesheet" href="{% block style %}styles.css{% endblock %}">
+  <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
     <!-- Level 3-->
-  <script src="{% block cartjs %}cart.js{% endblock %}"></script>
+  <script src="cart.js"></script>
 </head>
 
 <body>
     <header class="p-3 border-bottom">
         <div class="container">
           <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="{% block headerLogoLink %}index.html{% endblock %}" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-                <img style="height:64px;width:64px;" src="{% block headericon %}images/logo.png{% endblock %}" alt="" srcset="">
+            <a href="index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+                <img style="height:64px;width:64px;" src="images/logo.png" alt="" srcset="">
             </a>
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-              <li><a href="{% block productLink %}products.html{% endblock %}" class="nav-link px-2 link-dark">Products</a></li>
+              <li><a href="products.html" class="nav-link px-2 link-dark">Products</a></li>
             </ul>
 
             <div class="dropdown text-end">
               <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle align-items-center" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="{% block profilepic %}images/profile-pic.jpg{% endblock %}" alt="profile-pic" width="48" height="48" class="rounded-circle">
+                <img src="images/profile-pic.jpg" alt="profile-pic" width="48" height="48" class="rounded-circle">
               </a>
               <ul class="dropdown-menu text-small">
-                <li><a class="dropdown-item" href="{% block profileLink %}profile.html{% endblock %}">Profile</a></li>
-                <li><a class="dropdown-item" href="{% block checkoutLink %}checkout.html{% endblock %}">View Cart</a></li>
+                <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                <li><a class="dropdown-item" href="checkout.html">View Cart</a></li>
               </ul>
             </div>
           </div>
         </div>
       </header>
   <main>
-    {% block main %}
-    {% endblock %}
+    
+    <header class="bg-dark mt-1 py-5 align-items-center justify-content-center row" style="height:90vh;">
+        <div class="container px-4 px-lg-5">
+            <div class="text-center text-white">
+                <img style="height:256px;width:256px;" src="images/logo.png" alt="" srcset="">
+                <p class="lead fw-normal text-white-50 mb-0">Get your favourite electronics without breaking the bank!</p>
+                <a href="products.html" class="btn btn-warning mt-5 text-white">Check out our products!</a>
+            </div>
+        </div>
+    </header>
+
 
   </main>
   <footer>

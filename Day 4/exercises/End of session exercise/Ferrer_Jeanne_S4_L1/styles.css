@@ -1,0 +1,20 @@
+.product .card-img-top {
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  @media screen and (max-width: 768px) {
+    .products {
+      flex-direction: column !important;
+    }
+
+    .product {
+      width: 100% !important;
+    }
+
+    .product .card-img-top {
+      height: 20vh;
+    }
+  }

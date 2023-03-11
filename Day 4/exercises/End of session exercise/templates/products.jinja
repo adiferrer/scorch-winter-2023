@@ -2,7 +2,12 @@
 {%block main %}
 <div class="row">
     <h1 class="text-center my-5">Products</h1>
-    <!-- Level 1 code here-->
+    <div class="products px-0 container d-flex flex-wrap">
+        {% for product in products %}
+            {% with name=product["name"], price=product["price"], desc=product["description"], img=product["image"]  %}
+                {% include './components/product-card.jinja' %}
+            {% endwith %}
+        {% endfor %}
+    </div>
 </div>
-
 {%endblock%}
